@@ -39,7 +39,7 @@ async function run(){
                 // check
                 console.log('get the id',id)
                 const service = await serviceCollection.findOne(query)
-                res.json(service)
+                res.json(service) 
             });
 
             // POST API
