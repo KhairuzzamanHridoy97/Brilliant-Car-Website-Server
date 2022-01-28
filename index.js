@@ -5,7 +5,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT||5000;
+const port = process.env.PORT || 5000;
 
 //middleware
 app.use(cors());
@@ -29,6 +29,7 @@ async function run(){
                 const cursor = serviceCollection.find({});
                 const services= await cursor.toArray();
                 res.send(services);
+
             }) ;   
 
             // get single Service
@@ -36,8 +37,6 @@ async function run(){
             app.get('/services/:id',async(req,res)=>{
                 const id = req.params.id;
                 const query = {_id:ObjectId(id)}
-                // check
-                console.log('get the id',id)
                 const service = await serviceCollection.findOne(query)
                 res.json(service) 
             });
