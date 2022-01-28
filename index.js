@@ -73,6 +73,10 @@ app.get('/',(req,res)=>{
     res.send('Brilliant Car Server')
 })
 
+app.get('/jor',(req,res)=>{
+    res.send('Heroku Upload Check')
+})
+
 app.listen(port,()=>{
     console.log('Run This server on port ',port)
 })
